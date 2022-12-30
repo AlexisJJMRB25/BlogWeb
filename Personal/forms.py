@@ -105,7 +105,7 @@ class UsuariosDatos(forms.ModelForm):
 class UsuarioCaptura(UserCreationForm):
     class Meta:
         model = User
-        fields = ['first_name','last_name','email','username', 'password1', 'password2',]
+        fields = ['first_name','last_name','email','username', 'password1','password2',]
         widgets = {
             'first_name': forms.TextInput(
                 attrs = {'class':'form-control',
@@ -134,18 +134,4 @@ class UsuarioCaptura(UserCreationForm):
                     'type':'text',
                 }
             ),
-            'password1':forms.TextInput(
-                attrs= {
-                    'class':'form-control',
-                    'placeholder':'Contraseña',
-                    'type':'password',
-                }
-            ),
-            'password2':forms.TextInput(
-                attrs= {
-                    'class':'form-control',
-                    'placeholder':'Contraseña',
-                    'type':'password',
-                }
-            )
         }

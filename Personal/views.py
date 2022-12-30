@@ -152,6 +152,12 @@ def crearUsuario(request):
         form = UsuarioCaptura()
     return render(request, 'crearUsuarios.html', {'form': form})
 
+class AgregarUsuario(CreateView):
+    model = User
+    template_name = 'crearUsuarios.html'
+    form_class = UsuarioCaptura
+    success_url = reverse_lazy('listaUsuarios')
+
 class ActualizarUsuario(UpdateView):
     model = User
     form_class = UsuarioCaptura
