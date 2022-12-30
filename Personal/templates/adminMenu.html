@@ -1,0 +1,108 @@
+{% load static %}
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'admin/assets/css/style-starter.css' %}">
+
+  <!-- google fonts -->
+  <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+  <div class="sidebar-menu sticky-sidebar-menu">
+
+    <!-- logo start -->
+    <div class="logo">
+      <h1><a href="index.html">Collective</a></h1>
+    </div>
+
+  <!-- if logo is image enable this -->
+    <!-- image logo --
+    <div class="logo">
+      <a href="index.html">
+        <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
+      </a>
+    </div>
+    <!-- //image logo -->
+
+    <div class="logo-icon text-center">
+      <a href="{% url 'Inicio' %}" title="logo"><img src="{% static 'admin/assets/images/logo.png' %}" alt="logo-icon"> </a>
+    </div>
+    <!-- //logo end -->
+
+    <div class="sidebar-menu-inner">
+
+      <!-- sidebar nav start -->
+      <ul class="nav nav-pills nav-stacked custom-nav">
+        <li class="active"><a href="index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
+        </li>
+        <li class="menu-list">
+          <a href="#"><i class="fa fa-cogs"></i>
+            <span>Servicios<i class="lnr lnr-chevron-right"></i></span></a>
+          <ul class="sub-menu-list">
+            <li><a href="{% url 'listaUsuarios' %}">Usuarios</a> </li>
+            <li><a href="{% url 'listaSobreNosotros' %}">Sobre Nosotros</a> </li>
+            <li><a href="{% url 'ListadoInformacionPersonal' %}">Informacion Personal</a></li>
+          </ul>
+        </li>
+        <li><a href="pricing.html"><i class="fa fa-table"></i> <span>Pricing tables</span></a></li>
+        <li><a href="blocks.html"><i class="fa fa-th"></i> <span>Content blocks</span></a></li>
+        <li><a href="forms.html"><i class="fa fa-file-text"></i> <span>Forms</span></a></li>
+      </ul>
+      <!-- //sidebar nav end -->
+      <!-- toggle button start -->
+      <a class="toggle-btn">
+        <i class="fa fa-angle-double-left menu-collapsed__left"><span>Collapse Sidebar</span></i>
+        <i class="fa fa-angle-double-right menu-collapsed__right"></i>
+      </a>
+      <!-- //toggle button end -->
+    </div>
+  </div>
+  <script src="{% static 'admin/assets/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/jquery-1.10.2.min.js' %}"></script>
+
+<!-- chart js -->
+<script src="{% static 'admin/assets/js/Chart.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/utils.js' %}"></script>
+<!-- //chart js -->
+
+<!-- Different scripts of charts.  Ex.Barchart, Linechart -->
+<script src="{% static 'admin/assets/js/bar.js' %}"></script>
+<script src="{% static 'admin/assets/js/linechart.js' %}"></script>
+<!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
+
+
+<script src="{% static 'admin/assets/js/jquery.nicescroll.js' %}"></script>
+<script src="{% static 'admin/assets/js/scripts.js' %}"></script>
+
+<!-- close script -->
+<script>
+  var closebtns = document.getElementsByClassName("close-grid");
+  var i;
+
+  for (i = 0; i < closebtns.length; i++) {
+    closebtns[i].addEventListener("click", function () {
+      this.parentElement.style.display = 'none';
+    });
+  }
+</script>
+<!-- //close script -->
+
+<!-- disable body scroll when navbar is in active -->
+<script>
+  $(function () {
+    $('.sidebar-menu-collapsed').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll when navbar is in active -->
+
+ <!-- loading-gif Js -->
+ <script src="{% static 'admin/assets/js/modernizr.js' %}"></script>
+ <script>
+     $(window).load(function () {
+         // Animate loader off screen
+         $(".se-pre-con").fadeOut("slow");;
+     });
+ </script>
+ <!--// loading-gif Js -->
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'admin/assets/js/bootstrap.min.js' %}"></script>
