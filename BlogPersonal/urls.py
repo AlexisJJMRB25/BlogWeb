@@ -19,6 +19,7 @@ from Personal import views
 from . import settings
 from django.contrib.staticfiles.urls import static
 from Personal.views import AgregarInformacionPersonal,ListadoInformacionPersonal,ActualizarInformacionPersonal, BorrarInformacionPersonal,ActualizarUsuario
+from Personal.views import ListaContactanos, EliminarContactanos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,6 +44,8 @@ urlpatterns = [
     path('eliminarUsuario/<int:id_usuario>/', views.eliminarUsuario, name='eliminarUsuario'),
     path('iniciarSesion/', views.iniciarSesion, name='iniciarSesion'),
     path('Salir/', views.Salir, name='Salir'),
+    path('ListaContactanos/', ListaContactanos.as_view(), name='ListaContactanos'),
+    path('EliminarContactanos/<int:pk>/', EliminarContactanos.as_view(), name='EliminarContactanos'),
 ]
 
 if settings.DEBUG:

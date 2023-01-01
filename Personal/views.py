@@ -18,6 +18,16 @@ def Contactos(request):
         form = Contactanos()
     return render(request, 'contacto.html', {'form': form, 'informacion': informacion})
 
+class ListaContactanos(ListView):
+    model = Contacto
+    template_name = 'ListaContactanos.html'
+    queryset = Contacto.objects.all()
+    context_object_name = 'lista'
+
+class EliminarContactanos(DeleteView):
+    model = Contacto
+    template_name = 'EliminarContactanos.html'
+    success_url = reverse_lazy('ListaContactanos')
 
 def SobreNosotrosWeb(request):
     lista = SobreNosotros.objects.all()

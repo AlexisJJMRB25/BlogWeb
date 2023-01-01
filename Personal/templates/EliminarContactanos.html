@@ -1,0 +1,8 @@
+{% extends 'adminMenu.html' %}
+{% block content %}
+<h1>Desea eliminar la informacion del contacto {{object}} ?</h1>
+    <form method='POST'>
+        {% csrf_token %}
+        <button type='submit' class='btn btn-danger'>Eliminar</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'adminMenu.html' %} 
+{% block content %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css"
+/>
+
+<table id="example" class="table table-striped" style="width: 100%">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for listado in lista %}
+    <tr>
+      <td>{{listado.Nombre}}</td>
+      <td>{{listado.Correo}}</td>
+      <td>{{listado.Telefono}}</td>
+      <td>{{listado.Descripcion}}</td>
+      <td>
+        <a href="{% url 'EliminarContactanos' listado.id %}" class="btn btn-danger"
+          ><i class="fa fa-trash" aria-hidden="true"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<script>
+  $(document).ready(function () {
+    $("#example").DataTable();
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
+{% endblock content %}
